@@ -6,11 +6,16 @@
 /*   By: ggeordi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 16:48:21 by ggeordi           #+#    #+#             */
-/*   Updated: 2019/09/05 17:34:07 by ggeordi          ###   ########.fr       */
+/*   Updated: 2019/09/06 19:37:28 by ggeordi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int		ft_strcmp(char *s1, char *s2)
 {
@@ -19,17 +24,12 @@ int		ft_strcmp(char *s1, char *s2)
 
 	str1 = s1;
 	str2 = s2;
-	while (*str1 == *str2 && *str1 != '\0')
+	while (*str1 == *str2 && *str1 && *str2)
 	{
 		str1++;
 		str2++;
 	}
-	if (*str1 > *str2)
-		return (1);
-	else if (*str1 < *str2)
-		return (-1);
-	else
-		return (0);
+	return (*str1 - *str2);
 }
 
 void	sort_params(int argc, char **argv)
@@ -44,7 +44,7 @@ void	sort_params(int argc, char **argv)
 		j = argc - 1;
 		while (j > i)
 		{
-			if (ft_strcmp(argv[j - 1], argv[j]) == 1)
+			if (ft_strcmp(argv[j - 1], argv[j]) > 0)
 			{
 				arg = argv[j - 1];
 				argv[j - 1] = argv[j];
