@@ -6,9 +6,11 @@
 /*   By: ggeordi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 15:21:13 by ggeordi           #+#    #+#             */
-/*   Updated: 2019/09/05 15:34:59 by ggeordi          ###   ########.fr       */
+/*   Updated: 2019/09/06 20:13:17 by ggeordi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
