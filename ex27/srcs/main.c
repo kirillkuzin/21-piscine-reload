@@ -16,9 +16,9 @@
 int		main(int argc, char **argv)
 {
 	if (argc == 1)
-		write(2, "File name missing.", 18);
+		write(2, "File name missing.\n", 18);
 	else if (argc > 2)
-		write(2, "Too many arguments.", 19);
+		write(2, "Too many arguments.\n", 19);
 	else
 		ft_display_file(argv[1]);
 	return (1);
